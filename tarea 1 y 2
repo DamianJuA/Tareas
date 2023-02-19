@@ -1,1 +1,99 @@
+public class javaAfondo{
+    public static void main(String[] args){
+        String a =("hola");
+        int x = a.length();
+        System.out.println(x);
+        String s1= "hola";
+        boolean b1= s1.isEmpty();
+        System.out.println(b1);
 
+        String s2="";
+        boolean b2 = s2.isEmpty();
+        System.out.println(b2);
+        String t ="hola";
+        for(int i=0; i<t.length(); i++)
+        {
+            char c = t.charAt(i);
+            System.out.println(c);
+        }
+        String x2 ="hola";
+        String y ="hola";
+        if(x2.equals(y)){
+            System.out.println("Si pasa por aqui");
+        }
+        String s ="hola, como estas?";
+        int p1= s.indexOf('a');
+        int p2= s.lastIndexOf('a');
+        System.out.println(p1);
+        System.out.println(p2);
+        String q ="hola, como estas? estas como querias?";
+        int v1= q.indexOf("como");
+        int v2= q.indexOf("estas");
+        int v3= q.lastIndexOf("como");
+        System.out.println(v1);
+        System.out.println(v2);
+        System.out.println(v3);
+        String l="Hola como estas?";
+        String may= l.toUpperCase();
+        String min= l.toLowerCase();
+        System.out.println(may);
+        System.out.println(min);
+        String r ="Hola, como estas?";
+        String s5 =r.substring(0, 4);
+        String s4 =r.substring(6, 10);
+        String s3 =r.substring(11);
+        System.out.println(s5);
+        System.out.println(s4);
+        System.out.println(s3);
+        String s6="1234";
+        int i= Integer.parseInt(s6);
+        String t1 = Integer.toString(i);
+        System.out.println(i);
+        System.out.println(t1);
+        String s7 = "1234.56";
+        double d =Double.parseDouble(s7);
+        String t2 = Double.toString(d);
+        System.out.println(d);
+        System.out.println(t2);
+        String j= "Hola, ";
+        String k= "que tal?";
+        String u = j+k;
+        System.out.println(u);
+        String z ="HOLA";
+        z= ", chau";
+        System.out.println(z);
+        String f= "hola";
+        f+= ", chau";
+        System.out.println(f);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Hola, ");
+        sb.append("chau");
+        System.out.println(sb);
+        StringBuilder ap= new StringBuilder("hola");
+        ap.setCharAt(2, 'X');
+        System.out.println(ap);
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    }
+}
