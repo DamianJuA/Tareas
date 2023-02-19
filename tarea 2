@@ -1,1 +1,18 @@
+import java.util.Scanner;
+public class Tarea2
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner =new Scanner(System.in);
+        System.out.println("Ingrese su Nombre: ");
+        String nombre= scanner.nextLine();
+        System.out.println("Ingrese su Profesion: ");
+        String profesion= scanner.nextLine();
+        System.out.println("Ingrese su Pais: ");
+        String pais= scanner.nextLine();
+        
+        System.out.println("Nombre: "+nombre+" Profesion: "+profesion+" Pais: "+pais);
+        scanner.close();
 
+    }
+}
