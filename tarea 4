@@ -1,1 +1,24 @@
-
+import java.util.Scanner;
+public class Gato2{
+    public static void main(String[] args) {
+      
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Ingrese la jugada:  ");
+        String cadena = teclado.nextLine();
+        if (cadena.length() != 9) {        
+           return;
+        }
+        for (int i = 0; i < cadena.length(); i++) {
+           char play = cadena.charAt(i);
+           if (play != 'X' && play != 'O' && play != '_') {
+              System.out.println("CARACTERES INCORRECTOS");
+              return;
+           }
+        }
+        System.out.println(" " + cadena.charAt(0) + " | " + cadena.charAt(1) + " | " + cadena.charAt(2) + " ");
+        System.out.println("---+---+---");
+        System.out.println(" " + cadena.charAt(3) + " | " + cadena.charAt(4) + " | " + cadena.charAt(5) + " ");
+        System.out.println("---+---+---");
+        System.out.println(" " + cadena.charAt(6) + " | " + cadena.charAt(7) + " | " + cadena.charAt(8) + " ");
+     }
+}
