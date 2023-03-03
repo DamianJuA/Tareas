@@ -15,6 +15,7 @@ public class Gato2{
               return;
            }
         }
+        System.out.println(cadena);
         System.out.println(" " + cadena.charAt(0) + " | " + cadena.charAt(1) + " | " + cadena.charAt(2) + " ");
         System.out.println("---+---+---");
         System.out.println(" " + cadena.charAt(3) + " | " + cadena.charAt(4) + " | " + cadena.charAt(5) + " ");
