@@ -4,22 +4,22 @@ public class Gato2{
       
         Scanner teclado = new Scanner(System.in);
         System.out.print("Ingrese la jugada:  ");
-        String cadena = teclado.nextLine();
-        if (cadena.length() != 9) {        
+        String jugada = teclado.nextLine();
+        if (jugada.length() != 9) {        
            return;
         }
-        for (int i = 0; i < cadena.length(); i++) {
-           char play = cadena.charAt(i);
+        for (int i = 0; i < jugada.length(); i++) {
+           char play = jugada.charAt(i);
            if (play != 'X' && play != 'O' && play != '_') {
               System.out.println("CARACTERES INCORRECTOS");
               return;
            }
         }
-        System.out.println(cadena);
-        System.out.println(" " + cadena.charAt(0) + " | " + cadena.charAt(1) + " | " + cadena.charAt(2) + " ");
+        System.out.println(jugada);
+        System.out.println(" " + jugada.charAt(0) + " | " + jugada.charAt(1) + " | " + jugada.charAt(2) + " ");
         System.out.println("---+---+---");
-        System.out.println(" " + cadena.charAt(3) + " | " + cadena.charAt(4) + " | " + cadena.charAt(5) + " ");
+        System.out.println(" " + jugada.charAt(3) + " | " + jugada.charAt(4) + " | " + jugada.charAt(5) + " ");
         System.out.println("---+---+---");
-        System.out.println(" " + cadena.charAt(6) + " | " + cadena.charAt(7) + " | " + cadena.charAt(8) + " ");
+        System.out.println(" " + jugada.charAt(6) + " | " + jugada.charAt(7) + " | " + jugada.charAt(8) + " ");
      }
 }
