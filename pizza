@@ -1,1 +1,53 @@
+public class pizza{
+    private String sabor;
+    private String tamano;
+    private String tipo;
+   
 
+    public pizza () {
+        this.sabor   = "";
+        this.tamano = "";
+        this.tipo = "";
+        
+    }
+
+    public pizza(String sabor, String tamano, String tipo) {
+        this.sabor = sabor;
+        this.tamano = tamano;
+        this.tipo = tipo;
+        
+    }
+
+    @Override
+    public String toString() {
+        return "Sabor: " + this.sabor + "\nTamaño: " + this.tamano + "\nTipo: " + this.tipo;
+    }
+
+    public void setSabor(String sabor) {
+        this.sabor = sabor;
+    }
+
+    public void setTamano( String tamaño) {
+        this.tamano = tamano;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    
+
+    
+
+    public String getSabor() {
+        return this.sabor;
+    }
+
+    public String getTamano() {
+        return this.tamano;
+    }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+}
