@@ -1,1 +1,61 @@
+public class persona {
+    private String estudio;
+    private int edad;
+    private String nombre;
+   
+
+    public persona() {
+        this.estudio = "";
+        this.edad = 0;
+        this.nombre = "";
+        
+    }
+
+    public persona(String estudio, int edad, String nombre) {
+        this.estudio = estudio;
+        this.edad = edad;
+        this.nombre = nombre;
+        
+    }
+
+    @Override
+    public String toString() {
+        return "Estudio: " + this.estudio + "\nEdad: " + this.edad + "\nNombre: " + this.nombre;
+    }
+
+    public void setEstudio(String estudio) {
+        this.estudio = estudio;
+    }
+
+    public void setEdad( int edad) {
+        this.edad = edad;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
+
+    
+
+    public String getEstudio() {
+        return this.estudio;
+    }
+
+    public int getEdad() {
+        return this.edad;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    
+
+    
+}
+
+    
+
 
