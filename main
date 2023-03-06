@@ -1,1 +1,19 @@
+public class Main{
+    public static void main(String[] args) {
+        
 
+Automovil miAuto = new Automovil("Ford", "Mustang", "Rojo" );
+System.out.println(miAuto);
+
+persona estudiante = new persona("Ingenieria en la computacion", 19, "Sebastian" );
+System.out.println(estudiante);
+monitor mon = new monitor("Balamrush", 24.5, "curvo" );
+System.out.println(mon);
+pizza pz = new pizza("Peperoni", "grande", "Al Sarten" );
+System.out.println(pz);
+
+
+
+
+    }
+}
