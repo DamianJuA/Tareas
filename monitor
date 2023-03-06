@@ -1,1 +1,55 @@
+public class monitor{
+    private String marca;
+    private double tamaño;
+    private String tipo;
+   
+
+    public monitor() {
+        this.marca = "";
+        this.tamaño = 0.0;
+        this.tipo = "";
+        
+    }
+
+    public monitor(String marca, double tamaño, String tipo) {
+        this.marca = marca;
+        this.tamaño = tamaño;
+        this.tipo = tipo;
+        
+    }
+
+    @Override
+    public String toString() {
+        return "Marca: " + this.marca + "\nTamaño: " + this.tamaño + "\nTipo: " + this.tipo;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setTamaño( double tamaño) {
+        this.tamaño = tamaño;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    
+
+    
+
+    public String getMarca() {
+        return this.marca;
+    }
+
+    public double getTamaño() {
+        return this.tamaño;
+    }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+
+}
 
