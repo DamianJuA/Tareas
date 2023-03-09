@@ -1,0 +1,52 @@
+public class pais {
+    private String nombre;
+    private int poblacion;
+    private String capital;
+
+    public pais(String nombre, int poblacion, String capital) {
+        this.nombre = nombre;
+        this.poblacion = poblacion;
+        this.capital = capital;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getPoblacion() {
+        return poblacion;
+    }
+
+    public void setPoblacion(int poblacion) {
+        this.poblacion = poblacion;
+    }
+
+    public String getCapital() {
+        return capital;
+    }
+
+    public void setCapital(String capital) {
+        this.capital = capital;
+    }
+
+    @Override
+    public String toString() {
+        return "pais: " +
+                "nombre='" + nombre + '\'' +
+                ", poblacion=" + poblacion +
+                ", capital='" + capital + '\'';
+
+    }
+    public void mostrar() {
+        System.out.println(toString());
+    }
+
+    public void mostrarPoblacion() {
+        System.out.println("La población de " + nombre + " es de " + poblacion + " habitantes.");
+    }
+
+}
