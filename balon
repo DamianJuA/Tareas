@@ -1,0 +1,52 @@
+public class balon {
+    private String marca;
+    private String color;
+    private String deporte;
+    private double presion;
+
+    public balon(String marca, String color, String deporte) {
+        this.marca = marca;
+        this.color = color;
+        this.deporte = deporte;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getDeporte() {
+        return deporte;
+    }
+
+    public void setDeporte(String deporte) {
+        this.deporte = deporte;
+    }
+
+    @Override
+    public String toString() {
+        return "balon: " +
+                "marca='" + marca + '\'' +
+                ", color='" + color + '\'' +
+                ", para el deporte='" + deporte + '\'';
+    }
+    public void inflar(double presion) {
+        System.out.println("Inflando el balón " + marca + " a " + presion + " PSI");
+    }
+
+    public void mostrar() {
+        System.out.println(toString());
+    }
+
+}
