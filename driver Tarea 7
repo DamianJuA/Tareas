@@ -1,0 +1,30 @@
+public class driver {
+    public static void main(String[] args) {
+        pais pais1= new pais ("México",196000, "Estado de Mexico");
+        pais1.mostrar();
+        pais1.mostrarPoblacion();
+        computadora comp = new computadora("balamrush","empereor", 16);
+        comp.encender();
+        comp.aumentarRam(32);
+        cuborubik cubo1 = new cuborubik();
+        cubo1.mostrar();
+        cubo1.mezclar();
+        cubo1.resolver();
+        libro lb1 = new libro("La niebla", "Stephen king", 300);
+        lb1.mostrar();
+        lb1.pgleidas(72);
+        balon bl1 = new balon("willson", "naranja", "basquetball");
+        bl1.mostrar();
+        bl1.inflar(34.5);
+        lampara lmp1 = new lampara("20 cm", "blanco",17);
+        lmp1.mostrar();
+        lmp1.encender();
+        gato gt1 = new gato("Ramiro", 7, "Bengalí");
+        gt1.mostrar();
+        gt1.maullar();
+        gt1.dormir();
+
+
+
+    }
+}
