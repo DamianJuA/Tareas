@@ -1,0 +1,59 @@
+public class lampara {
+    private String altura;
+    private String color;
+    private int voltios;
+
+    public lampara(String altura, String color, int voltios) {
+        this.altura = altura;
+        this.color = color;
+        this.voltios = voltios;
+    }
+
+    public String getAltura() {
+        return altura;
+    }
+
+    public void setAltura(String altura) {
+        this.altura = altura;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getVoltios() {
+        return voltios;
+    }
+
+    public void setVoltios(int voltios) {
+        this.voltios = voltios;
+    }
+
+    @Override
+    public String toString() {
+        return "lampara: " +
+                "altura='" + altura + '\'' +
+                ", color='" + color + '\'' +
+                ", volts recibidos =" + voltios ;
+    }
+    public void encender() {
+        if(voltios>=15) {
+            System.out.println("la lampara ah recibido " + voltios + " volts " + "con los cuales puede encender...");
+
+        }else {
+            System.out.println("la lampara no ah recibido suficientes volts por lo cual no puede encender...");
+        }
+
+
+    }
+    public void mostrar() {
+        System.out.println(toString());
+    }
+
+
+
+}
