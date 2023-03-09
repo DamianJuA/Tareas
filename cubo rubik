@@ -1,0 +1,56 @@
+import java.util.Arrays;
+
+public class cuborubik {
+    private int tamaño;
+    private String colorCentral;
+    private String[] coloresCara;
+
+    public cuborubik() {
+        this.tamaño = 3;
+        this.colorCentral = "blanco";
+        this.coloresCara = new String[] {"azul", "naranja", "verde", "rojo", "amarillo", "blanco"};
+    }
+
+    public int getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(int tamaño) {
+        this.tamaño = tamaño;
+    }
+
+    public String getColorCentral() {
+        return colorCentral;
+    }
+
+    public void setColorCentral(String colorCentral) {
+        this.colorCentral = colorCentral;
+    }
+
+    public String[] getColoresCara() {
+        return coloresCara;
+    }
+
+    public void setColoresCara(String[] coloresCara) {
+        this.coloresCara = coloresCara;
+    }
+
+    @Override
+    public String toString() {
+        return "cubo rubik: " +
+                "tamaño=" + tamaño +
+                ", colorCentral='" + colorCentral + '\'' +
+                ", coloresCara=" + Arrays.toString(coloresCara) +
+                '}';
+    }
+    public void mostrar() {
+        System.out.println(toString());
+    }
+    public void mezclar() {
+        System.out.println("Mezclando el cubo de Rubik...");
+    }
+
+    public void resolver() {
+        System.out.println("Resolviendo el cubo de Rubik...");
+    }
+}
