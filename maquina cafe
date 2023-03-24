@@ -1,0 +1,66 @@
+public class MaquinaCafe {
+    private int agua;
+    private int cafe;
+    private int crema;
+    private int vasos;
+
+    public MaquinaCafe() {
+        this.agua = 5000;
+        this.cafe = 1000;
+        this.crema = 1500;
+        this.vasos = 50;
+    }
+
+    public void servirAmericano(int americano) {
+
+            agua -= 180 * americano;
+            cafe -= 15 * americano;
+            vasos -=americano;
+        if (agua > 0 && cafe > 0 && vasos > 0) {
+            System.out.println("Aquí tiene sus "+americano+" cafés americanos.");
+            System.out.println("Quedan " + agua + " ml de agua, " + cafe + " g de café y " + crema + " ml de crema "+vasos+" vasos.");
+        } else {
+            System.out.println("Lo siento, no puedo servir más café.");
+        }
+    }
+
+    public void servirExpreso( int expreso) {
+        if (agua >= 120 && cafe >= 20 && vasos >0) {
+            agua -= 120 * expreso;
+            cafe -= 20 * expreso;
+            vasos -=expreso;
+            System.out.println("Aquí tiene sus "+expreso+" cafés expreso.");
+            System.out.println("Quedan " + agua + " ml de agua, " + cafe + " g de café y " + crema + " ml de crema "+vasos+" vasos.");
+        } else {
+            System.out.println("Lo siento, no puedo servir más café.");
+        }
+    }
+
+    public void servirCapuchino(int capucchino) {
+        if (agua >= 100 && crema >= 70 && cafe >= 14 && vasos > 0) {
+            agua -= 100*capucchino;
+            crema -= 70*capucchino;
+            cafe -= 14*capucchino;
+            vasos-=capucchino;
+            System.out.println("Aquí tiene sus "+capucchino+" capuchinos.");
+            System.out.println("Quedan " + agua + " ml de agua, " + cafe + " g de café y " + crema + " ml de crema "+vasos+" vasos.");
+        } else {
+            System.out.println("Lo siento, no puedo servir más café.");
+        }
+    }
+
+    public void mostrarEstado() {
+
+            if (agua >= 0 && crema >= 0 && cafe >= 0 && vasos > 0 ) {
+                System.out.println("Quedan " + agua + " ml de agua, " + cafe + " g de café y " + crema + " ml de crema " + vasos + " vasos.");
+            }else{
+                System.out.println("No queda nada lo siento :(");
+            }
+
+    }
+
+
+
+
+
+}
