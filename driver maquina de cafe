@@ -1,0 +1,9 @@
+public class DriverMaquina {
+    public static void main(String[] args) {
+        MaquinaCafe maquina = new MaquinaCafe();
+
+        System.out.println("La máquina está lista para servir café.");
+        maquina.servirAmericano(5);
+        maquina.servirCapuchino(3);
+        maquina.servirExpreso(4);
+        maquina.mostrarEstado();
