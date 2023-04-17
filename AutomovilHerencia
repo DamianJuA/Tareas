@@ -1,0 +1,67 @@
+public class Automovil extends Vehiculo{
+    protected String marca;
+    protected int numpuertas;
+    protected String tipodegasolina;
+
+    public Automovil() {
+    }
+
+    public Automovil(String marca, int numpuertas, String tipodegasolina) {
+        this.marca = marca;
+        this.numpuertas = numpuertas;
+        this.tipodegasolina = tipodegasolina;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getNumpuertas() {
+        return numpuertas;
+    }
+
+    public void setNumpuertas(int numpuertas) {
+        this.numpuertas = numpuertas;
+    }
+
+    public String getTipodegasolina() {
+        return tipodegasolina;
+    }
+
+    public void setTipodegasolina(String tipodegasolina) {
+        this.tipodegasolina = tipodegasolina;
+    }
+
+    @Override
+    public String toString() {
+        return "Automovil{" +
+                "marca='" + marca + '\'' +
+                ", numpuertas=" + numpuertas +
+                ", tipodegasolina='" + tipodegasolina + '\'' +
+                ", neumaticos='" + neumaticos + '\'' +
+                ", cajadecambios='" + cajadecambios + '\'' +
+                ", motor='" + motor + '\'' +
+                '}';
+    }
+    public void carromarca(){
+        System.out.println("Tu carro es marca "+marca);
+
+    }
+    public void estadodelagasolina(){
+        System.out.println("El tipo de gasolina para el funcionamiento correcto del carro es "+tipodegasolina);
+    }
+
+    @Override
+    public void Arrancar() {
+        System.out.println("Tu Automovil "+marca+" esta arrancando");
+    }
+
+    @Override
+    public void revisionneumaticos() {
+        System.out.println("Tu carro de "+numpuertas+" puertas se encuentra en buen estado de neumaticos");
+    }
+}
