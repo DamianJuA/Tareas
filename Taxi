@@ -1,0 +1,71 @@
+public class Taxi extends Automovil{
+    protected String color;
+    protected String taximetro;
+    protected int pasajerosmaximo;
+
+    public Taxi() {
+    }
+
+    public Taxi(String marca, int numpuertas, String tipodegasolina, String color, String taximetro, int pasajerosmaximo) {
+        super(marca, numpuertas, tipodegasolina);
+        this.color = color;
+        this.taximetro = taximetro;
+        this.pasajerosmaximo = pasajerosmaximo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getTaximetro() {
+        return taximetro;
+    }
+
+    public void setTaximetro(String taximetro) {
+        this.taximetro = taximetro;
+    }
+
+    public int getPasajerosmaximo() {
+        return pasajerosmaximo;
+    }
+
+    public void setPasajerosmaximo(int pasajerosmaximo) {
+        this.pasajerosmaximo = pasajerosmaximo;
+    }
+
+    @Override
+    public String toString() {
+        return "Taxi{" +
+                "color='" + color + '\'' +
+                ", taximetro='" + taximetro + '\'' +
+                ", pasajerosmaximo=" + pasajerosmaximo +
+                ", marca='" + marca + '\'' +
+                ", numpuertas=" + numpuertas +
+                ", tipodegasolina='" + tipodegasolina + '\'' +
+                ", neumaticos='" + neumaticos + '\'' +
+                ", cajadecambios='" + cajadecambios + '\'' +
+                ", motor='" + motor + '\'' +
+                '}';
+    }
+    public void color(){
+        System.out.println("El taxi de colores "+color+" es parte de la bases local del lugar");
+    }
+    public void siono(){
+        System.out.println("El taxi "+taximetro+" cuenta con taximetro");
+    }
+
+    @Override
+    public void carromarca() {
+        System.out.println("El taxi es un automovil de marca "+marca);
+
+    }
+
+    @Override
+    public void estadodelagasolina() {
+        System.out.println("El tipo de gasolina que necesita el taxi para su correcto funcionamiento es "+tipodegasolina);
+    }
+}
