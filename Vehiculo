@@ -1,0 +1,58 @@
+public class Vehiculo {
+    protected String neumaticos;
+    protected String cajadecambios;
+    protected String motor;
+
+    public Vehiculo() {
+    }
+
+    public Vehiculo(String neumaticos, String cajadecambios, String motor) {
+        this.neumaticos = neumaticos;
+        this.cajadecambios = cajadecambios;
+        this.motor = motor;
+    }
+
+    public String getNeumaticos() {
+        return neumaticos;
+    }
+
+    public void setNeumaticos(String neumaticos) {
+        this.neumaticos = neumaticos;
+    }
+
+    public String getCajadecambios() {
+        return cajadecambios;
+    }
+
+    public void setCajadecambios(String cajadecambios) {
+        this.cajadecambios = cajadecambios;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "neumaticos='" + neumaticos + '\'' +
+                ", cajadecambios='" + cajadecambios + '\'' +
+                ", motor='" + motor + '\'' +
+                '}';
+
+
+        }
+        public void Arrancar(){
+            System.out.println("El carro esta arrancando...");
+        }
+        public void revisionneumaticos(){
+            System.out.println("Los neumaticos estan en perfectas condiciones, listos para salir..");
+        }
+}
+
+
+
