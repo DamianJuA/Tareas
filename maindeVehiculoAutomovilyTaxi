@@ -1,0 +1,18 @@
+public class MainHeredado {
+    public static void main(String[] args) {
+        Vehiculo vehiculo1= new Vehiculo("Michelin","Automatico","Alternativo");
+        System.out.println(vehiculo1);
+        vehiculo1.Arrancar();
+        vehiculo1.revisionneumaticos();
+        Automovil carro=new Automovil("Dodge",2,"E85");
+        carro.carromarca();
+        carro.estadodelagasolina();
+        carro.Arrancar();
+        carro.revisionneumaticos();
+        Taxi taxi1=new Taxi("Nissan",4,"dissel","morado y blanco","si",4);
+        taxi1.carromarca();
+        taxi1.estadodelagasolina();
+        taxi1.color();
+        taxi1.siono();
+    }
+}
