@@ -1,0 +1,65 @@
+public class Motocicleta implements VehiculoInterfaz{
+    private int CentimetrosCubicos;
+    private String Marca;
+
+    @Override
+    public String toString() {
+        return "Motocicleta{" +
+                "CentimetrosCubicos=" + CentimetrosCubicos +
+                ", Marca='" + Marca + '\'' +
+                '}';
+    }
+
+    public int getCentimetrosCubicos() {
+        return CentimetrosCubicos;
+    }
+
+    public void setCentimetrosCubicos(int centimetrosCubicos) {
+        CentimetrosCubicos = centimetrosCubicos;
+    }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String marca) {
+        Marca = marca;
+    }
+
+    public Motocicleta(int centimetrosCubicos, String marca) {
+        CentimetrosCubicos = centimetrosCubicos;
+        Marca = marca;
+    }
+
+    public Motocicleta() {
+    }
+    public void hacerCaballito(){
+        System.out.println("Haciendo un caballito para romperme un hueso");
+    }
+
+    @Override
+    public boolean encender() {
+        System.out.println("Encendiendo la moto marca "+this.Marca);
+        return true;
+    }
+
+    @Override
+    public boolean apagar() {
+        System.out.println("Apagando la moto marca "+this.Marca);
+
+        return true;
+    }
+
+    @Override
+    public void avanzar() {
+        System.out.println("Avanzando con la motocicleta de "+this.CentimetrosCubicos+"CC");
+
+    }
+
+    @Override
+    public void frenar() {
+        System.out.println("Frenando con la motocicleta de "+this.CentimetrosCubicos+"CC");
+
+
+    }
+}
