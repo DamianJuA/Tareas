@@ -1,0 +1,23 @@
+public class CajasinGenericos {
+    Object[] content;
+
+    public CajasinGenericos() {
+    }
+
+    public CajasinGenericos(Object[] content) {
+        this.content = content;
+    }
+    public void add(int pos, Object objeto){
+        content[pos] = objeto;
+    }
+    public Object get(int pos ){
+        return content[pos];
+    }
+
+    @Override
+    public String toString() {
+        return "CajasinGenericos{" +
+                "content=" + Arrays.toString(content) +
+                '}';
+    }
+}
