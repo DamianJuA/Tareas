@@ -1,0 +1,49 @@
+public class Driver {
+    public static void main(String[] args) {
+        Caja<String> miCaja = new Caja<>(new String[10]);
+
+        miCaja.add(0,"hola");
+        miCaja.add(1,"adios");
+        miCaja.add(2,"hi");
+        System.out.println(miCaja);
+
+        System.out.println("-----Sin Genericos-----");
+        CajasinGenericos CajaSin = new CajasinGenericos(new Object[10]);
+        CajaSin.add(0,"hola");
+        CajaSin.add(1,"adios");
+        CajaSin.add(2,"hi");
+        System.out.println(CajaSin);
+        String temp2=(String)CajaSin.get(0);
+        System.out.println("-------");
+        Caja<Comida>cajaComida= new Caja<>(new Comida[10]);
+        cajaComida.add(0, new Comida("yoghurth",true));
+        System.out.println(cajaComida.get(0));
+        System.out.println("--------");
+        ArrayList<Comida>comidas=new ArrayList<>();
+        comidas.add(new Comida("Zanahoria",false));
+        comidas.add(new Comida("Zanahoria",false));
+        comidas.add(new Comida("Zanahoria",false));
+        comidas.add(new Comida("Zanahoria",false));
+        comidas.add(new Comida("Zanahoria",false));
+        comidas.add(new Comida("Zanahoria",false));
+        comidas.add(new Comida("Zanahoria",false));
+
+        System.out.println(comidas.size());
+        System.out.println(comidas.get(2));
+        ArrayList<Comida>comidas2=new ArrayList<>();
+        comidas.add(new Comida("Zanahoria",false));
+        comidas.add(new Comida("Yogurth",true));
+        comidas.add(new Comida("Danonino",true));
+        comidas.add(new Comida("Manzana",false));
+        comidas.add(new Comida("Bisteck",false));
+        System.out.println(comidas2.get(3));
+        comidas2.set(3,new Comida("Fresa",false));
+        System.out.println("-----Final-----");
+        for (Comida comida : comidas2) {
+            System.out.println(comida);
+            
+        }
+
+
+    }
+}
