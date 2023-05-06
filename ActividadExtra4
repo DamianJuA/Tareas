@@ -1,0 +1,80 @@
+public class Ventanaact4 extends JFrame {
+    private JPanel panel1;
+    private JButton boton1;
+    private JLabel etiqueta1;
+    private JPanel panel2;
+    private JLabel etiqueta2;
+
+    private JPanel panel3;
+    private JComboBox<String> combobox;
+
+    private JPanel panel4;
+    private GridLayout layout;
+
+    public Ventanaact4(String title) throws HeadlessException {
+        super(title);
+        this.setSize(800,600);
+        layout=new GridLayout(2,2);
+        this.getContentPane().setLayout(layout);
+        //panel 1
+        panel1= new JPanel();
+        panel1.setBackground(Color.BLUE);
+        panel1.setLayout(new FlowLayout(FlowLayout.LEFT));
+        boton1=new JButton("Presioname");
+        panel1.add(boton1);
+        etiqueta1 = new JLabel("...");
+        panel1.add(etiqueta1);
+        boton1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                etiqueta1.setText("Hola, Presionaste el boton del panel 1");
+
+            }
+        });
+        this.getContentPane().add(panel1,0);
+        //Panel 2
+        String  urlImagen ="https://ih1.redbubble.net/image.4677128245.4016/flat,128x128,075,t.jpg";
+        panel2= new JPanel();
+        panel2.setBackground(Color.MAGENTA);
+        panel2.setLayout(new FlowLayout());
+        try{
+            URL url= new URL(urlImagen);
+            Image imagen = ImageIO.read(url);
+            ImageIcon imagenicon = new ImageIcon(imagen);
+            etiqueta2=new JLabel(imagenicon);
+            panel2.add(etiqueta2);
+            this.getContentPane().add(panel2,1);
+        }catch(MalformedURLException me){
+            System.out.println("Url no valida");
+        }catch ( Exception e){
+            System.out.println("Error al cargar la imagen");
+        }
+
+
+        //Panel 3
+        panel3= new JPanel();
+        panel3.setBackground(Color.BLACK);
+
+        panel3.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        String[] elementos = {"opcion 1", "opcion 2", "opcion 3", "opcion 4"};
+        combobox=new JComboBox<>(elementos);
+        combobox.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(e.getSource().toString());
+                System.out.println(combobox.getSelectedIndex());
+            }
+        });
+        panel3.add(combobox);
+
+        this.getContentPane().add(panel3,2);
+        //Panel 4
+        panel4= new JPanel();
+        panel4.setBackground(Color.CYAN);
+        this.getContentPane().add(panel4,3);
+
+
+
+        this.setVisible(true);
+    }
+}
