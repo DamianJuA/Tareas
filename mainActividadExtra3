@@ -1,0 +1,7 @@
+public class MainActividadExtra3 {
+    public static void main(String[] args) {
+        Ventana ventana = new Ventana("layouts");
+        VentanaGrid ventanaGrid= new VentanaGrid("Ventana layout cuadricula");
+
+    }
+}
