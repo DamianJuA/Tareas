@@ -1,0 +1,5 @@
+public class MainActividadExtra4 {
+    public static void main(String[] args) {
+        Ventanaact4 ventana=new Ventanaact4("Paneles");
+    }
+}
