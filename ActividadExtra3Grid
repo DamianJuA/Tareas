@@ -1,0 +1,39 @@
+public class VentanaGrid extends Frame{
+    private Label lbletiqueta;
+    private Label lbletiqueta2;
+    private TextField txtcuadro1;
+    private TextField txtcuadro2;
+    private Button boton;
+
+    private GridLayout layout;
+
+    public VentanaGrid(String title) throws HeadlessException {
+        super(title);
+        layout= new GridLayout(3, 2);
+
+        this.setSize(800,600);
+        this.setLayout(layout);
+        lbletiqueta=new Label("Etiqueta 1");
+        this.add(lbletiqueta, 0);
+        txtcuadro1=new TextField(30);
+        this.add(txtcuadro1,1);
+        lbletiqueta2=new Label("Etiqueta 2");
+        this.add(lbletiqueta2, 2);
+        txtcuadro2=new TextField(30);
+        this.add(txtcuadro2,3);
+        boton=new Button("Presioname");
+        this.add(boton, 4);
+        boton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                String texto = txtcuadro1.getText()+  " " + txtcuadro2.getText();
+                JOptionPane.showMessageDialog(null,texto);
+            }
+        });
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
