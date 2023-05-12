@@ -1,0 +1,46 @@
+public class Ventanaact14 extends JFrame{
+    private JLabel lblnombre;
+    private JTextField txtnombre;
+    private JButton boton;
+    private JComboBox combo;
+    private NombreModelo modelo;
+
+    public Ventanaact14(String title) throws HeadlessException {
+        super(title);
+        this.setSize(400,400);
+        setLayout(new FlowLayout());
+        lblnombre= new JLabel("Ingresa un nombre");
+        this.getContentPane().add(lblnombre);
+        txtnombre= new JTextField(30);
+        this.getContentPane().add(txtnombre);
+        boton=new JButton("Agregar");
+        this.getContentPane().add(boton);
+        //configurar Modelo
+        modelo = new NombreModelo();
+        modelo.agregarNombre("Diana");
+        modelo.agregarNombre("Diego");
+        modelo.agregarNombre("Susana");
+        combo =new JComboBox();
+        this.getContentPane().add(combo);
+
+        this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        boton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                String nuevo = txtnombre.getText();
+                modelo.agregarNombre(nuevo);
+                txtnombre.setText("");
+            }
+        });
+        combo.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(combo.getSelectedIndex());
+                System.out.println(combo.getSelectedItem());
+                JOptionPane.showMessageDialog(null,"HOLA"+combo.getSelectedItem());
+            }
+        });
+
+    }
+}
