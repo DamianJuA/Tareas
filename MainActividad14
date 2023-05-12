@@ -1,0 +1,5 @@
+public class mainVentanaAct14 {
+    public static void main(String[] args) {
+        Ventanaact14 ventana = new Ventanaact14("Combobox MVC");
+    }
+}
