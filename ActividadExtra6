@@ -1,0 +1,24 @@
+import java.sql.*;
+
+import  org.sqlite.JDBC;
+public class DemoConexionSQLite {
+    public static void main(String[] args) {
+        String DBurl = "jdbc:sqlite:LibrosDB.db";
+        Connection conexion = null;
+        try{
+            Class.forName("org.sqlite.JDBC");
+            conexion= DriverManager.getConnection(DBurl);
+            Statement stm = conexion.createStatement();
+            ResultSet rst = stm.executeQuery("SELECT * FROM LIBROS; ");
+            while (rst.next()){
+                System.out.println(rst.getString(1)+" "+rst.getString(2));
+            }
+            conexion.close();
+        }catch(ClassNotFoundException cne){
+            cne.printStackTrace();
+        }catch (SQLException sqle){
+            sqle.printStackTrace();
+        }
+
+    }
+}
