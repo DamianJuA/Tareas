@@ -1,0 +1,102 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
+public class Ventanaact15  extends JFrame {
+    private JLabel LBLID;
+    private JLabel LBLnombre;
+    private JLabel LBLGenero;
+    private JLabel LBLPeso;
+    private JLabel LBLPlataforma;
+    private JLabel LBLDesarrollador;
+    private JTextField txtid;
+    private JTextField txtnombre;
+    private JTextField txtgenero;
+    private JTextField txtpeso;
+    private JTextField txtplataforma;
+    private JTextField txtdesarrolador;
+    private JButton btnagregar;
+    private GridLayout layout;
+    private JPanel panel1;
+    private JPanel panel2;
+    private ModeloTablaJuego modelo;
+    private ArrayList<videojuego> info;
+    private JScrollPane scroll;
+    private JTable tbltabla;
+
+
+    public Ventanaact15(String title) throws HeadlessException {
+        super(title);
+        this.setSize(500,700);
+        layout = new GridLayout(2,1);
+        this.setLayout(layout);
+        //panel 1
+        panel1= new JPanel(new FlowLayout());
+        panel1.setBackground(new Color(0xDFC7435E, true));
+        LBLID = new JLabel("id");
+        txtid = new JTextField(4);
+        panel1.add(LBLID);
+        panel1.add(txtid);
+        LBLnombre = new JLabel("Nombre");
+        txtnombre = new JTextField(30);
+        panel1.add(LBLnombre);
+        panel1.add(txtnombre);
+        LBLGenero = new JLabel("Genero");
+        txtgenero = new JTextField(15);
+        panel1.add(LBLGenero);
+        panel1.add(txtgenero);
+        LBLPeso = new JLabel("Peso en GB");
+        txtpeso = new JTextField(5);
+        panel1.add(LBLPeso);
+        panel1.add(txtpeso);
+        LBLPlataforma = new JLabel("Plataforma");
+        txtplataforma = new JTextField(15);
+        panel1.add(LBLPlataforma);
+        panel1.add(txtplataforma);
+        LBLDesarrollador = new JLabel("Desarrollador");
+        txtdesarrolador = new JTextField(25);
+        panel1.add(LBLDesarrollador);
+        panel1.add(txtdesarrolador);
+        btnagregar=new JButton("Agregar Juego");
+        panel1.add(btnagregar);
+
+
+        this.getContentPane().add(panel1,0);
+
+
+
+        // panel 2
+        panel2=new JPanel(new FlowLayout());
+        panel2.setBackground(new Color(0x1A1A1C));
+        info = new ArrayList<>();
+        info.add(new videojuego(1,"League of Legends","MOBA",4.5,"Windows y MAC","RIOT"));
+        modelo= new ModeloTablaJuego(info);
+        tbltabla = new JTable(modelo);
+        scroll = new JScrollPane(tbltabla);
+        panel2.add(scroll);
+
+        this.getContentPane().add(panel2,1);
+
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        this.btnagregar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                videojuego nuevo = new videojuego();
+                nuevo.setId(Integer.parseInt(txtid.getText()));
+                nuevo.setNombre(txtnombre.getText());
+                nuevo.setGenero(txtgenero.getText());
+                nuevo.setPesoEnGb(Double.parseDouble(txtpeso.getText()));
+                nuevo.setPlataforma(txtplataforma.getText());
+                nuevo.setDesarrollador(txtdesarrolador.getText());
+                //info.add(nuevo);
+                modelo.agregarjuego(nuevo);
+                tbltabla.updateUI();
+            }
+        });
+        this.setVisible(true);
+
+    }
+}
