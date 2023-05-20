@@ -1,0 +1,62 @@
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class LibroDAO implements InterfazDAO{
+    public LibroDAO() {
+    }
+
+    @Override
+    public boolean insertar(Object obj) throws SQLException{
+        String sqlinto = "INSERT INTO libros(titulo,autor) VALUES(?,?)";
+        int rowcount = 0;
+        PreparedStatement pstm = ConexionSignLeton.getInstance("LibrosDB.DB").getConection().prepareStatement(sqlinto);
+        pstm.setString(1, ((libro)obj).getTitulo());
+        pstm.setString(2, ((libro)obj).getAutor());
+        rowcount=pstm.executeUpdate();
+        return rowcount>0;
+    }
+    @Override
+    public boolean update(Object obj) throws SQLException{
+        String sqlupdate = "UPDATE libros SET titulo = ?, autor= ? WHERE id = ?";
+        int rowcount = 0;
+        PreparedStatement pstm = ConexionSignLeton.getInstance("LibrosDB.DB").getConection().prepareStatement(sqlupdate);
+        pstm.setString(1, ((libro)obj).getTitulo());
+        pstm.setString(2, ((libro)obj).getAutor());
+        pstm.setInt(((libro)obj).getId);
+        rowcount=pstm.executeUpdate();
+        return rowcount>0;
+        return false;
+    }
+    @Override
+    public boolean delete(Object id) throws SQLException{}
+        String sqldelete = "DELETE FROM libros WHERE id = ?; ";
+        int rowcount = 0;
+        PreparedStatement pstm = Conexionsingleton.getInstance("librosDB.DB").getConection().prepareStatement(sqldelete);
+        pstm.setInt(1, Integer.parseInt(id));
+        rowCount = pstm.excuteUpdate();
+        return rowcount>0;
+    }
+    @Override
+    public ArrayList obtenerTodo() throws SQLException{
+
+        return null;
+    }
+    @Override
+    public Object buscarPorId(String id) throws SQLException{
+        String sql = "SELECT * FROM WHERE id = ?; ";
+        Libro libro = null;
+
+            PreparedStatement pstm = Conexionsingleton.getInstance("librosDB.DB").getConection().prepareStatement(sql);
+            pstm.setInt(1, Integer.parseInt(id));
+            ResultSet rst = pstm.executeQuery();
+            if(rst.next()){
+                libro = new Libro(rst.getInt(1), rst.getInt(2),rst.getInt(3) );
+            }
+
+        
+        return null;
+    }
+
+}
