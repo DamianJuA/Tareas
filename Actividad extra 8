@@ -1,0 +1,358 @@
+//Ventana
+package org.example.Vista;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class VentanaLibro extends JFrame {
+    private JLabel lblId;
+    private JLabel lblTitulo;
+    private JLabel lblAutor;
+    private JTextField txtId;
+    private JTextField txtTitulo;
+    private JTextField txtAutor;
+    private JButton btnAgregar;
+    private JButton btnCargar;
+    private JTable tblLibro;
+    private JScrollPane scrollpane;
+    private GridLayout layout;
+    private JPanel panel1;//formulario para capturar libros
+    private JPanel panel2;//tabla para mostrar los libros
+    private JPanel panel3;//
+    private JPanel panel4;//
+
+    public VentanaLibro(String title) throws HeadlessException {
+        super(title);
+        this.setSize(800,800);
+        layout=new GridLayout(2,2);
+        this.getContentPane().setLayout(layout);
+        //panel 1
+        panel1= new JPanel(new FlowLayout());
+        panel1.setBackground(new Color(125, 229, 220));
+        lblId = new JLabel("ID:");
+        lblTitulo = new JLabel("Titulo:");
+        lblAutor = new JLabel("Autor:");
+        txtId= new JTextField(3);
+        txtId.setText("0");
+        txtId.setEnabled(false);
+        txtTitulo= new JTextField(15);
+        txtAutor= new JTextField(15);
+        btnAgregar= new JButton("Agregar");
+        panel1.add(lblId);
+        panel1.add(txtId);
+        panel1.add(lblTitulo);
+        panel1.add(txtAutor);
+        panel1.add(lblAutor);
+        panel1.add(txtAutor);
+        panel1.add(btnAgregar);
+
+
+        //panel 2
+        panel2= new JPanel(new FlowLayout());
+        panel2.setBackground(new Color(147, 229, 125));
+        btnCargar= new JButton("Cargar");
+        panel2.add(btnCargar);
+        tblLibro=new JTable();
+        scrollpane= new JScrollPane(tblLibro);
+        panel2.add(scrollpane);
+
+
+        //panel 3
+        panel3= new JPanel(new FlowLayout());
+        panel3.setBackground(new Color(233, 159, 241));
+
+
+        //panel 4
+        panel3= new JPanel(new FlowLayout());
+        panel3.setBackground(new Color(139, 125, 229));
+
+
+
+
+
+        this.getContentPane().add(panel1,0);
+        this.getContentPane().add(panel2,1);
+        this.getContentPane().add(panel3,2);
+        this.getContentPane().add(panel4,3);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+    }
+
+    public JLabel getLblId() {
+        return lblId;
+    }
+
+    public void setLblId(JLabel lblId) {
+        this.lblId = lblId;
+    }
+
+    public JLabel getLblTitulo() {
+        return lblTitulo;
+    }
+
+    public void setLblTitulo(JLabel lblTitulo) {
+        this.lblTitulo = lblTitulo;
+    }
+
+    public JLabel getLblAutor() {
+        return lblAutor;
+    }
+
+    public void setLblAutor(JLabel lblAutor) {
+        this.lblAutor = lblAutor;
+    }
+
+    public JTextField getTxtId() {
+        return txtId;
+    }
+
+    public void setTxtId(JTextField txtId) {
+        this.txtId = txtId;
+    }
+
+    public JTextField getTxtTitulo() {
+        return txtTitulo;
+    }
+
+    public void setTxtTitulo(JTextField txtTitulo) {
+        this.txtTitulo = txtTitulo;
+    }
+
+    public JTextField getTxtAutor() {
+        return txtAutor;
+    }
+
+    public void setTxtAutor(JTextField txtAutor) {
+        this.txtAutor = txtAutor;
+    }
+
+    public JButton getBtnAgregar() {
+        return btnAgregar;
+    }
+
+    public void setBtnAgregar(JButton btnAgregar) {
+        this.btnAgregar = btnAgregar;
+    }
+
+    public JTable getTblLibro() {
+        return tblLibro;
+    }
+
+    public void setTblLibro(JTable tblLibro) {
+        this.tblLibro = tblLibro;
+    }
+
+    public JScrollPane getScrollpane() {
+        return scrollpane;
+    }
+
+    public void setScrollpane(JScrollPane scrollpane) {
+        this.scrollpane = scrollpane;
+    }
+
+    @Override
+    public GridLayout getLayout() {
+        return layout;
+    }
+
+    public void setLayout(GridLayout layout) {
+        this.layout = layout;
+    }
+
+    public JPanel getPanel1() {
+        return panel1;
+    }
+
+    public void setPanel1(JPanel panel1) {
+        this.panel1 = panel1;
+    }
+
+    public JPanel getPanel2() {
+        return panel2;
+    }
+
+    public void setPanel2(JPanel panel2) {
+        this.panel2 = panel2;
+    }
+
+    public JPanel getPanel3() {
+        return panel3;
+    }
+
+    public void setPanel3(JPanel panel3) {
+        this.panel3 = panel3;
+    }
+
+    public JPanel getPanel4() {
+        return panel4;
+    }
+
+    public void setPanel4(JPanel panel4) {
+        this.panel4 = panel4;
+    }
+
+    public JButton getBtnCargar() {
+        return btnCargar;
+    }
+
+    public void setBtnCargar(JButton btnCargar) {
+        this.btnCargar = btnCargar;
+    }
+}
+//Modelo Tabla
+package org.example.MODELO;
+
+import org.example.Persistencia.LibroDAO;
+
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class ModeloTablaLibro implements TableModel {
+    public static final int columnas = 3;
+    private ArrayList<Libro>datos;
+    private LibroDAO ldao;
+
+    public ModeloTablaLibro() {
+        ldao = new LibroDAO();
+        datos = new ArrayList<>();
+    }
+
+    public ModeloTablaLibro(ArrayList<Libro> datos) {
+        this.datos = datos;
+        ldao = new LibroDAO();
+    }
+
+    @Override
+    public int getRowCount() {
+        return datos.size();
+    }
+
+    @Override
+    public int getColumnCount() {
+        return columnas;
+    }
+
+    @Override
+    public String getColumnName(int rowIndex) {
+        switch (rowIndex){
+            case 0:
+                return "id";
+            case 1:
+                return "Titulo";
+            case 2:
+                return "Autor";
+
+        }
+        return null;
+    }
+
+    @Override
+    public Class<?> getColumnClass(int rowIndex) {
+        switch (rowIndex){
+        case 0:
+            return Integer.class;
+        case 1:
+            return String.class;
+        case 2:
+            return String.class;
+
+    }
+
+        return null;
+    }
+
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return true;
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        Libro tmp = datos.get(rowIndex);
+        switch (columnIndex){
+            case 0:
+                return tmp.getId();
+            case 1:
+                return tmp.getTitulo();
+            case 2:
+                return tmp.getAutor();
+
+        }
+        return null;
+    }
+
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        switch (columnIndex){
+            case 0:
+                //
+                break;
+            case 1:
+                datos.get(rowIndex).setTitulo((String) aValue);
+                break;
+                case 2:
+                datos.get(rowIndex).setAutor((String) aValue);
+                break;
+            default:
+                System.out.println("No se modifica nada ");
+
+        }
+
+    }
+
+    @Override
+    public void addTableModelListener(TableModelListener l) {
+
+    }
+
+    @Override
+    public void removeTableModelListener(TableModelListener l) {
+
+    }
+    public void cargardatos(){
+        try{
+            ArrayList< Libro>TIRAR = ldao.obtenertodo();
+            System.out.println(TIRAR);
+            datos = ldao.obtenertodo();
+
+        }catch (SQLException sqle ){
+            System.out.println(sqle.getMessage());
+        }
+    }
+}
+// Controlador
+package org.example.Controlador;
+
+import org.example.MODELO.ModeloTablaLibro;
+import org.example.Vista.VentanaLibro;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+public class Controlador extends MouseAdapter {
+    private VentanaLibro view;
+    private ModeloTablaLibro modelo;
+
+
+    public Controlador(VentanaLibro view) {
+        this.view = view;
+        this.view.getBtnCargar().addMouseListener(this);
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if (e.getSource() == this.view.getBtnCargar()){
+            modelo=new ModeloTablaLibro();
+            modelo.cargardatos();
+            this.view.getTblLibro().setModel(modelo);
+            this.view.getTblLibro().updateUI();
+        }
+    }
+}
+
+
